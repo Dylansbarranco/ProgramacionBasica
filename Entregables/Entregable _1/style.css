@@ -1,0 +1,384 @@
+/* 
+=========================================
+ARCHIVO: style.css
+Propósito:
+  - Definir los estilos visuales para la página personal en formato de hoja de vida.
+  - Mantener el contenido (HTML) separado de la presentación (CSS).
+=========================================
+*/
+
+/* ----------- Estilos generales ----------- */
+
+/* Estilo base del body (cuerpo de la página) */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #2d3748;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* Contenedor principal de la página */
+.page {
+  max-width: 1000px; /* ancho máximo de la página */
+  margin: 24px auto; /* centra la página con márgenes */
+  padding: 0 16px; /* espacio lateral */
+}
+
+/* ----------- Encabezado ----------- */
+
+/* Caja superior con nombre y datos */
+header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 32px 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+  text-align: center;
+}
+
+/* Título principal (nombre) */
+h1 {
+  margin: 0 0 8px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Subtítulo (correo, perfil, ciudad) */
+.subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+/* ----------- Diseño de columnas ----------- */
+
+/* Grid con dos columnas: izquierda (sidebar) y derecha (contenido) */
+.grid {
+  display: grid; /* activa sistema de cuadrícula */
+  gap: 16px; /* espacio entre columnas */
+  grid-template-columns: 320px 1fr; /* columna izquierda fija y derecha flexible */
+}
+
+/* Vista en pantallas pequeñas: una sola columna */
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ----------- Tarjetas de contenido ----------- */
+
+/* Cada bloque (perfil, habilidades, redes, etc.) */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 20px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5);
+}
+
+/* Títulos de secciones */
+h2 {
+  margin: 0 0 16px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #4a5568;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 8px;
+}
+
+/* Subtítulos más pequeños */
+h3 {
+  margin: 16px 0 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #667eea;
+}
+
+/* ----------- Imagen de perfil ----------- */
+
+/* Estilo de la foto personal */
+img.photo {
+  width: 100%; /* ocupa todo el ancho disponible */
+  border-radius: 12px; /* esquinas redondeadas */
+  border: 1px solid #e2e8f0; /* borde gris claro */
+  object-fit: cover; /* recorta para mantener proporción */
+}
+
+/* ----------- Listas y enlaces ----------- */
+
+/* Márgenes de listas */
+ul, ol {
+  margin: 6px 0 10px 20px;
+}
+
+/* Estilo de enlaces */
+a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+  transform: translateX(2px);
+}
+
+/* ----------- Tabla ----------- */
+
+/* Estilo de la tabla de horario */
+table {
+  width: 100%; /* ocupa todo el ancho */
+  border-collapse: collapse; /* elimina bordes dobles */
+}
+
+/* Cabecera de la tabla */
+thead th {
+  background: #f1f5f9; /* fondo gris claro */
+  padding: 8px; /* espacio interno */
+  text-align: left; /* texto alineado a la izquierda */
+}
+
+/* Celdas de tabla */
+th, td {
+  border: 1px solid #e2e8f0; /* bordes internos */
+  padding: 8px;
+  vertical-align: top;
+}
+
+/* ----------- Formulario ----------- */
+
+/* Formulario con disposición en columnas */
+form {
+  display: grid;
+  gap: 10px; /* espacio entre campos */
+  max-width: 560px; /* ancho máximo */
+}
+
+/* Etiquetas de campos */
+label {
+  font-weight: 600; /* texto en negrita */
+}
+
+/* Campos de texto, correo y textarea */
+input[type="text"], input[type="email"], textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+/* Área de texto más grande */
+textarea {
+  min-height: 120px;
+  resize: vertical; /* permite redimensionar verticalmente */
+}
+
+/* Botón del formulario */
+.btn {
+  border: none;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+/* ----------- Columnas internas ----------- */
+
+/* Dos columnas dentro de una sección (pasatiempos / tareas) */
+.two-col {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* En pantallas pequeñas se apila en una sola columna */
+@media(max-width: 600px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ----------- Estilos para nuevas secciones ----------- */
+
+/* Sección de habilidades técnicas */
+.skills-section h3 {
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #667eea;
+  display: flex;
+  align-items: center;
+}
+
+.skills-section h3:first-child {
+  margin-top: 8px;
+}
+
+.skills-section ul {
+  margin-bottom: 16px;
+}
+
+.skills-section li {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+}
+
+/* Sección de experiencia y educación */
+.experience-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 600px) {
+  .experience-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.education, .interests {
+  padding: 16px;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 12px;
+  border-left: 4px solid #667eea;
+}
+
+/* Sección de proyectos */
+.projects {
+  display: grid;
+  gap: 16px;
+}
+
+.project {
+  padding: 16px;
+  background: rgba(118, 75, 162, 0.1);
+  border-radius: 12px;
+  border-left: 4px solid #764ba2;
+  transition: transform 0.2s ease;
+}
+
+.project:hover {
+  transform: translateX(5px);
+}
+
+.project h3 {
+  margin-top: 0;
+  color: #764ba2;
+}
+
+.project p {
+  margin-bottom: 0;
+  color: #4a5568;
+}
+
+/* Información de contacto */
+.contact-info {
+  text-align: center;
+}
+
+.contact-info a {
+  display: inline-block;
+  margin: 4px 0;
+  padding: 8px 12px;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.contact-info a:hover {
+  background: rgba(102, 126, 234, 0.2);
+  transform: scale(1.05);
+}
+
+/* Sección de objetivos y metas */
+.goals-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 600px) {
+  .goals-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.goal {
+  padding: 16px;
+  background: rgba(102, 126, 234, 0.08);
+  border-radius: 12px;
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  transition: all 0.3s ease;
+}
+
+.goal:hover {
+  border-color: rgba(102, 126, 234, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2);
+}
+
+.goal h3 {
+  margin-top: 0;
+  color: #667eea;
+  text-align: center;
+}
+
+/* Enlaces de redes sociales */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.social-link {
+  display: block;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  border-radius: 25px;
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.social-link:hover {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+  border-color: rgba(102, 126, 234, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* ----------- Impresión en PDF (A4) ----------- */
+
+/* Ajuste de tamaño de impresión */
+@page {
+  size: A4;
+  margin: 14mm;
+}

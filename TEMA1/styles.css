@@ -1,0 +1,64 @@
+/* --- Estilos del formulario (interno) --- */
+form{
+    display: grid;                 /* Usa un layout en cuadrícula para apilar los campos verticalmente */
+    gap: 12px;                     /* Separa cada fila/campo del formulario */
+    max-width: 650px;              /* Limita el ancho para mejorar la lectura */
+    margin: auto;                  /* Centra horizontalmente el formulario en la página */
+    padding: 20px;                 /* Espaciado interno alrededor de los controles */
+    border: 1px solid #ccc;        /* Borde gris claro que delimita el formulario */
+    border-radius: 10px;           /* Esquinas redondeadas del contenedor del formulario */
+    background: #fff;              /* Fondo blanco para buen contraste de texto */
+  }
+  
+  label{
+    font-weight: 600;              /* Hace las etiquetas más visibles/legibles */
+    margin-top: 6px;               /* Añade distancia respecto al elemento anterior */
+  }
+  
+  input, select, textarea, button{
+    width: 100%;                   /* Hace que cada control ocupe todo el ancho disponible */
+    padding: 10px;                 /* Aumenta el área clicable y la comodidad de lectura */
+    border-radius: 8px;            /* Suaviza las esquinas de los controles */
+    border: 1px solid #ccc;        /* Borde tenue estandarizado para todos los controles */
+    font: inherit;                 /* Hereda la tipografía del documento para consistencia */
+  }
+  
+  input:focus, select:focus, textarea:focus{
+    border-color: #810f0f;         /* Resalta el borde cuando el control tiene foco */
+    outline: none;                  /* Elimina el contorno por defecto del navegador */
+    box-shadow: 0 0 0 3px #e0ecff; /* Añade un halo de enfoque (mejora accesibilidad visual) */
+  }
+  
+  fieldset{
+    margin-top: 12px;              /* Separa el grupo del bloque anterior */
+    padding: 10px;                 /* Espaciado interno del conjunto de campos */
+    border: 1px solid #bbb;        /* Borde para delimitar el fieldset */
+    border-radius: 8px;            /* Esquinas redondeadas del grupo */
+  }
+  
+  legend{
+    font-weight: 700;              /* Destaca el título del fieldset */
+    color: #810f0f;                /* Color en sintonía con los encabezados */
+  }
+  
+  button{
+    margin-top: 10px;              /* Deja aire antes del botón */
+    background: #13810f;           /* Color de fondo del botón principal */
+    color: #fff;                   /* Texto blanco para máximo contraste */
+    border: none;                  /* Elimina el borde por defecto */
+    cursor: pointer;               /* Muestra la “mano” para indicar que es clicable */
+  }
+  
+  button:hover{
+    background: #09345d;           /* Oscurece el botón al pasar el mouse (feedback visual) */
+  }
+  
+  /* --- Reglas de impresión A4 --- */
+  @page{
+    size: A4;                      /* Define el tamaño de la página de impresión */
+    margin: 12mm;                  /* Márgenes recomendados para exportar a PDF */
+  }
+  
+  @media print{
+    body{ background: #fff; }      /* Fondo blanco al imprimir para claridad y ahorro de tinta */
+  }
